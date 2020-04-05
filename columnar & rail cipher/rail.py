@@ -1,4 +1,4 @@
-file = open('text.txt','r')
+file = open('message.txt','r')
 message = file.read()
 print("\nThe message is:",message)
 
@@ -14,7 +14,7 @@ def encryption(text):
 			#inner rails
 			char_pairs = zip(text[i::m], list(text[m-i::m]) + [''])
 			out += ''.join(map(''.join, char_pairs))
-	file = open('text.txt','w')
+	file = open('message.txt','w')
 	file.write(out)
 
 def decryption(t):

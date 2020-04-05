@@ -1,4 +1,4 @@
-file = open('text.txt','r')
+file = open('message.txt','r')
 message = file.read()
 print("\nThe message is:",message)
 
@@ -16,7 +16,7 @@ def encryption(message):
 	for i in range(len(key)):
 		d[key[i]] = A[i]
 
-	file = open('text.txt','w')
+	file = open('message.txt','w')
 	for i in range(len(key)):
 		for j in d[i]:
 			file.write(j)
@@ -29,7 +29,7 @@ def decryption(message):
 		A[i] = message[key[i]*(len(message)//4):(key[i]+1)*(len(message)//4)]
 	A = ''.join(A)
 
-	file = open('text.txt','w')
+	file = open('message.txt','w')
 	for i in range(len(message)//len(key)):
 		for j in range(i,len(message),len(message)//len(key)):
 			file.write(A[j])
